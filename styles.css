@@ -130,8 +130,3 @@ footer a:hover {
 footer h2 {
     display: none;
   }
-  
-footer a:hover {
-  color: var(--box-hoover);
-  text-decoration: underline;
-} 
