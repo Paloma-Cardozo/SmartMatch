@@ -1,8 +1,8 @@
 :root {
-    --primary-color: hsl(271, 53%, 47%);
-    --secondary-color: hsl(271, 60%, 22%);
-    --background-color: hsl(43, 100%, 96%);
-    --hover-color: hsl(271, 45%, 35%);
+    --primary-color: hsl(235, 43%, 45%);
+    --secondary-color: hsl(210, 20%, 40%);
+    --background-color: hsl(210, 60%, 98%);
+    --hover-color: hsl(235, 43%, 30%);
     --text-shadow: hsl(271, 60%, 85%);
     --box-shadow: rgba(159, 59, 59, 0.1);
     --li-color: hsl(44, 89%, 55%);
@@ -20,7 +20,7 @@ body {
 /* Styles for the header */
 
 header {
-    font-family: "DynaPuff", system-ui;
+    font-family: "Roboto", system-ui;
     color: var(--primary-color);
     text-align: center;
     font-size: 1.5rem;
@@ -60,22 +60,18 @@ main {
     font-family: "DynaPuff", system-ui;
     background-color: var(--primary-color);
     color: white;
-    border: none;
-    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary-color);
+    padding: 0.75rem 1.5rem;
     font-size: 1.25rem;
     cursor: pointer;
-    border-radius: 1rem;
+    border-radius: 2rem;
+    box-shadow: 0 2px 6px var(--li-shadow);
     transition: background-color 0.3s ease-in-out;
-    flex-shrink: 0;
-    align-self: flex-start;
-    width: auto;
-    min-width: 150px;
-    max-width: 100%;
-    text-align: center;
-}
-
+}    
+ 
 #match-btn:hover {
     background-color: var(--hover-color);
+    transform: translateY(-2px);
 }
 
 #result {
@@ -92,17 +88,17 @@ main {
 #result li {
     background-color: var(--li-color);
     color: white;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
     font-size: 1rem;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0 2px 5px var(--li-shadow);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.2s ease;
+    box-shadow: 0 3px 6px var(--li-shadow);
 }
 
 #result li:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
     background-color: var(--li-hover-color);
-    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px var(--li-shadow);
 }
 
 /* Styles for the footer */
@@ -130,3 +126,20 @@ footer a:hover {
 footer h2 {
     display: none;
   }
+
+/* Media query */
+@media (max-width: 600px) {
+    main {
+        padding: 1.5rem;
+    }
+
+    .result-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    #match-btn {
+        width: 100%;
+        min-width: unset;
+    }
+}  
